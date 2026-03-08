@@ -1,17 +1,664 @@
 ---
-
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SJ7 MUSIK</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+KR:wght@300;400;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <nav id="mainNav">
+    <a href="#about" data-section="about">About</a>
+    <a href="#artists" data-section="artists">Artists</a>
+    <a href="#works" data-section="works">Works</a>
+    <a href="#news" data-section="news">News</a>
+    <a href="#footer-contact" data-section="contact">Contact</a>
+  </nav>
+
+  <!-- HOME -->
+  <section id="home">
+    <span class="section-label">SJ7 MUSIK</span>
+    <div class="home-left">
+      <div class="logo-img-wrap">
+        <img src="/sj7_logo_w.png" alt="SJ7 MUSIK" />
+      </div>
+      <p class="logo-tagline">SJ7 MUSIK &nbsp;/&nbsp; Artist-led Music IP Company</p>
+    </div>
+    <div class="home-right">
+      <div class="video-wrapper">
+        <iframe
+          src="https://www.youtube.com/embed/epUFGmlk9ls?controls=1&rel=0"
+          title="컴 (COME) '루즈 (LOSE)' Official MV"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <span class="section-label">About</span>
+    <div class="about-inner">
+      <div class="about-headline">
+        <span>WHERE THE</span>
+        <span>SOUND LEADS.</span>
+      </div>
+      <div class="about-divider"></div>
+      <div class="about-text">
+        <p>SJ7 Music은 창작 과정에서 탄생하는 생생한 설렘을 음악과 공연, 다양한 콘텐츠로 확장해 선보이는 크리에이티브 뮤직 레이블입니다.</p>
+        <p>새로운 감각과 깊이 있는 감동을 전하며, 팬들과 특별한 경험을 함께 만들어가고 있습니다.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARTISTS -->
+  <section id="artists">
+    <span class="section-label">Artists</span>
+    <div class="artist-row">
+      <div class="artist-name-block">
+        <span class="artist-name-en">SOOYOON KIM</span>
+        <span class="artist-name-kr">김수윤</span>
+      </div>
+      <div class="artist-photo">
+        <img src="/sooyoon.jpg" alt="Sooyoon Kim" />
+      </div>
+      <div class="artist-divider"></div>
+    </div>
+    <div class="artist-row right">
+      <div class="artist-divider"></div>
+      <div class="artist-photo">
+        <img src="/jongmyeong.JPG" alt="Jongmyeong Kim" />
+      </div>
+      <div class="artist-name-block">
+        <span class="artist-name-en">JONGMYEONG KIM</span>
+        <span class="artist-name-kr">김종명</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORKS -->
+  <section id="works">
+    <span class="section-label">Works</span>
+    <div class="works-grid">
+      <div class="works-col">
+        <div class="works-col-title">Selected Production Credits</div>
+        <div class="works-col-subtitle">K-Pop / Asian Artist Credits</div>
+        <div class="works-item">GOT7</div>
+        <div class="works-item">MONSTA X</div>
+        <div class="works-item">PRODUCE 101 CHINA</div>
+        <div class="works-item">UP10TION</div>
+        <div class="works-item">ASTRO</div>
+        <div class="works-item">JBJ</div>
+        <div class="works-item">VICTON</div>
+        <div class="works-item">SNUPER</div>
+        <div class="works-item">Teen Top</div>
+        <div class="works-item">JO1</div>
+        <div class="works-item">MCND</div>
+        <div class="works-item">BOY STORY</div>
+        <div class="works-item">ZHU ZHENG TING</div>
+        <div class="works-item">김동한</div>
+        <div class="works-item">이진혁</div>
+        <div class="works-item">RAKI (ASTRO)</div>
+        <div class="works-item">WEi</div>
+        <div class="works-item">조광일</div>
+        <div class="works-item">Lee Jaewon (H.O.T)</div>
+      </div>
+      <div class="works-col">
+        <div class="works-col-title">Solo Releases</div>
+        <div class="works-col-subtitle">COME (컴)</div>
+        <div class="works-item">"DIVE" (Feat. 조광일)</div>
+        <div class="works-item">"COLORS"</div>
+        <div class="works-item">"LOSE"</div>
+        <div class="works-item">"CALL YOUR NAME"</div>
+        <div class="works-item">"HATE ME?"</div>
+        <div class="works-item">"ONLY YOU"</div>
+      </div>
+      <div class="works-col">
+        <div class="works-col-title">CF / Commercial Production Credits</div>
+        <div class="works-item">Samsung Galaxy</div>
+        <div class="works-item">Samsung Z Flip</div>
+        <div class="works-item">Samsung Sticky</div>
+        <div class="works-item">Shinhan Life</div>
+        <div class="works-item">Dongwon Grilly</div>
+        <div class="works-item">S-OIL</div>
+        <div class="works-item">Baskin-Robbins (TV Commercial – August New Product Campaign)</div>
+        <div class="works-item">iHerb</div>
+        <div class="works-item">Pocari Sweat</div>
+        <div class="works-item">Nordisk</div>
+        <div class="works-item">Hyundai Card</div>
+        <div class="works-item">Kyobo Life Insurance</div>
+        <div class="works-item">TV Chosun</div>
+        <div class="works-item">Baemin Club</div>
+        <div class="works-item">Olive Young</div>
+        <div class="works-item">Homeplus</div>
+        <div class="works-item">MISSHA</div>
+        <div class="works-item">Bravo Cone</div>
+        <div class="works-item">Oronamin C</div>
+        <div class="works-item">Seoul Metropolitan Government</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWS -->
+  <section id="news">
+    <span class="section-label">News</span>
+    <div class="coming-soon-wrap">
+      <div class="coming-soon-text">Coming Soon</div>
+      <div class="coming-soon-line"></div>
+    </div>
+  </section>
+
+  <!-- FOOTER / CONTACT -->
+  <footer id="footer-contact">
+    <div class="footer-logo">SJ7 MUSIK</div>
+    <div class="footer-copy">
+      Artist-led Music IP Company<br/>
+      © 2025 SJ7 MUSIK. All rights reserved.
+    </div>
+  </footer>
+
+</body>
 </html>
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --black: #000000;
+    --white: #ffffff;
+    --gray: #888888;
+    --light-gray: #cccccc;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: #000;
+    color: var(--white);
+    font-family: 'Noto Sans KR', sans-serif;
+    overflow-x: hidden;
+    cursor: none;
+  }
+
+  /* ── 커스텀 커서 ── */
+  .cursor {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    background: white;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    mix-blend-mode: difference;
+    /* 스크롤과 무관하게 고정 */
+    top: 0;
+    left: 0;
+  }
+  .cursor-ring {
+    position: fixed;
+    width: 36px;
+    height: 36px;
+    border: 1px solid rgba(255,255,255,0.5);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9998;
+    transform: translate(-50%, -50%);
+    transition: transform 0.18s ease;
+    mix-blend-mode: difference;
+    top: 0;
+    left: 0;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 200;
+    padding: 28px 48px;
+    display: flex;
+    gap: 36px;
+    align-items: center;
+  }
+  nav a {
+    color: var(--white);
+    text-decoration: none;
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    opacity: 0.55;
+    transition: opacity 0.3s ease;
+    position: relative;
+  }
+  nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: white;
+    transition: width 0.3s ease;
+  }
+  nav a:hover { opacity: 1; }
+  nav a:hover::after { width: 100%; }
+  nav a.active { opacity: 1; }
+  nav a.active::after { width: 100%; }
+
+  /* ── SECTIONS ── */
+  section {
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    /* z-index 제거 — 스크롤 방해 원인 */
+  }
+
+  .section-label {
+    position: absolute;
+    top: 28px;
+    left: 48px;
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    color: rgba(255,255,255,0.15);
+    text-transform: uppercase;
+  }
+
+  /* ── HOME ── */
+  #home {
+    justify-content: space-between;
+    padding: 0 8vw;
+    overflow: hidden;
+  }
+  .home-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .logo-img-wrap {
+    width: clamp(260px, 36vw, 520px);
+    margin-bottom: 28px;
+    opacity: 0;
+    animation: fadeUp 1s ease 0.3s forwards;
+  }
+  .logo-img-wrap img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .logo-tagline {
+    font-family: 'Space Mono', monospace;
+    font-size: clamp(9px, 0.9vw, 12px);
+    letter-spacing: 0.2em;
+    color: var(--gray);
+    text-transform: uppercase;
+    opacity: 0;
+    animation: fadeUp 1s ease 0.8s forwards;
+  }
+  .home-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 4vw;
+  }
+  .video-wrapper {
+    width: 100%;
+    max-width: 620px;
+    aspect-ratio: 16/9;
+    background: #0a0a0a;
+    overflow: hidden;
+    opacity: 0;
+    animation: fadeUp 1.1s ease 1s forwards;
+    border: 1px solid rgba(255,255,255,0.07);
+  }
+  .video-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── ABOUT ── */
+  #about {
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 8vw;
+  }
+  .about-inner {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .about-headline {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(52px, 9vw, 138px);
+    line-height: 0.92;
+    letter-spacing: 0.02em;
+    margin-bottom: 52px;
+    overflow: hidden;
+  }
+  .about-headline span {
+    display: block;
+    transform: translateY(110%);
+    opacity: 0;
+    transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.6s ease;
+  }
+  .about-headline span:nth-child(2) { transition-delay: 0.1s; }
+  .about-headline.visible span { transform: translateY(0); opacity: 1; }
+
+  .about-divider {
+    width: 100%;
+    max-width: 920px;
+    height: 1px;
+    background: rgba(255,255,255,0.14);
+    margin-bottom: 56px;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 1s ease 0.45s;
+  }
+  .about-divider.visible { transform: scaleX(1); }
+
+  .about-text {
+    max-width: 600px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease 0.65s, transform 0.8s ease 0.65s;
+  }
+  .about-text.visible { opacity: 1; transform: translateY(0); }
+  .about-text p {
+    font-size: clamp(14px, 1.35vw, 17px);
+    line-height: 2;
+    color: var(--light-gray);
+    font-weight: 300;
+    margin-bottom: 22px;
+  }
+
+  /* ── ARTISTS ── */
+  #artists {
+    flex-direction: column;
+    justify-content: center;
+    padding: 100px 8vw;
+    gap: 80px;
+  }
+  .artist-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 48px;
+    width: 100%;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.9s ease, transform 0.9s cubic-bezier(0.16,1,0.3,1);
+  }
+  .artist-row:nth-child(3) { transition-delay: 0.2s; }
+  .artist-row.visible { opacity: 1; transform: translateY(0); }
+  .artist-row.right {
+    flex-direction: row-reverse;
+    align-self: flex-end;
+  }
+  .artist-name-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-bottom: 4px;
+  }
+  .artist-name-en {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(32px, 5vw, 78px);
+    line-height: 1;
+    letter-spacing: 0.04em;
+  }
+  .artist-name-kr {
+    font-size: clamp(13px, 1.4vw, 20px);
+    color: var(--gray);
+    font-weight: 300;
+    margin-top: 8px;
+    letter-spacing: 0.1em;
+  }
+  .artist-photo {
+    width: clamp(160px, 16vw, 240px);
+    flex-shrink: 0;
+    background: #0d0d0d;
+  }
+  .artist-photo img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: grayscale(20%);
+    transition: filter 0.5s ease, transform 0.6s ease;
+  }
+  .artist-photo:hover img {
+    filter: grayscale(0%);
+    transform: scale(1.05);
+  }
+  .artist-divider {
+    flex: 1;
+    height: 1px;
+    background: rgba(255,255,255,0.1);
+    align-self: center;
+  }
+
+  /* ── WORKS ── */
+  #works {
+    flex-direction: column;
+    justify-content: center;
+    padding: 100px 8vw;
+  }
+  .works-grid {
+    display: grid;
+    grid-template-columns: 1fr 0.6fr 1fr;
+    gap: 0 60px;
+    width: 100%;
+    padding-top: 40px;
+  }
+  .works-col {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .works-col:nth-child(2) { transition-delay: 0.15s; }
+  .works-col:nth-child(3) { transition-delay: 0.3s; }
+  .works-col.visible { opacity: 1; transform: translateY(0); }
+  .works-col-title {
+    font-family: 'Space Mono', monospace;
+    font-size: 9.5px;
+    letter-spacing: 0.2em;
+    color: var(--white);
+    text-transform: uppercase;
+    border-top: 1px solid rgba(255,255,255,0.14);
+    padding-top: 18px;
+    margin-bottom: 22px;
+  }
+  .works-col-subtitle {
+    font-family: 'Space Mono', monospace;
+    font-size: 8.5px;
+    letter-spacing: 0.18em;
+    color: rgba(255,255,255,0.35);
+    text-transform: uppercase;
+    margin-top: 18px;
+    margin-bottom: 12px;
+  }
+  .works-item {
+    font-size: clamp(11px, 1vw, 13.5px);
+    line-height: 1.75;
+    color: var(--white);
+    font-weight: 700;
+    padding: 3px 0;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+  }
+  .works-item::before {
+    content: '+';
+    color: rgba(255,255,255,0.28);
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    flex-shrink: 0;
+  }
+
+  /* ── NEWS ── */
+  #news {
+    justify-content: center;
+    align-items: center;
+  }
+  .coming-soon-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .coming-soon-wrap.visible { opacity: 1; transform: translateY(0); }
+  .coming-soon-text {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(36px, 6vw, 80px);
+    letter-spacing: 0.1em;
+  }
+  .coming-soon-line {
+    width: 240px;
+    height: 1px;
+    background: rgba(255,255,255,0.28);
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #000;
+    padding: 40px 8vw;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .footer-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 0.15em;
+    color: rgba(255,255,255,0.45);
+  }
+  .footer-copy {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    color: rgba(255,255,255,0.22);
+    letter-spacing: 0.08em;
+    text-align: right;
+    line-height: 1.8;
+  }
+
+  ::-webkit-scrollbar { width: 3px; }
+  ::-webkit-scrollbar-track { background: #000; }
+  ::-webkit-scrollbar-thumb { background: #2a2a2a; border-radius: 2px; }
+
+  @media (max-width: 768px) {
+    nav { padding: 18px 24px; gap: 18px; }
+    nav a { font-size: 10px; letter-spacing: 0.12em; }
+    #home { flex-direction: column; padding: 100px 6vw 60px; gap: 40px; }
+    .home-right { padding-left: 0; }
+    .works-grid { grid-template-columns: 1fr; gap: 44px; }
+    .artist-row.right { flex-direction: row; align-self: auto; }
+    .section-label { left: 24px; }
+    footer { flex-direction: column; align-items: flex-start; }
+    .footer-copy { text-align: left; }
+  }
+</style>
+
+<script>
+  // ── 홈에서 시작 ──
+  window.history.scrollRestoration = 'manual';
+  window.scrollTo(0, 0);
+
+  // ── 커서 (clientX/Y 사용 — 스크롤과 무관) ──
+  const cursor = document.getElementById('cursor');
+  const ring = document.getElementById('cursorRing');
+  let mx = 0, my = 0, rx = 0, ry = 0;
+
+  document.addEventListener('mousemove', (e) => {
+    mx = e.clientX;
+    my = e.clientY;
+    // cursor는 바로 이동
+    cursor.style.left = mx + 'px';
+    cursor.style.top = my + 'px';
+  });
+
+  // ring은 부드럽게 따라옴
+  (function animRing() {
+    rx += (mx - rx) * 0.12;
+    ry += (my - ry) * 0.12;
+    ring.style.left = rx + 'px';
+    ring.style.top = ry + 'px';
+    requestAnimationFrame(animRing);
+  })();
+
+  document.querySelectorAll('a, button').forEach(el => {
+    el.addEventListener('mouseenter', () => ring.style.transform = 'translate(-50%,-50%) scale(1.8)');
+    el.addEventListener('mouseleave', () => ring.style.transform = 'translate(-50%,-50%) scale(1)');
+  });
+
+  // ── 스크롤 reveal ──
+  const revealEls = document.querySelectorAll(
+    '.about-headline, .about-divider, .about-text, .artist-row, .works-col, .coming-soon-wrap'
+  );
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.12 });
+  revealEls.forEach(el => io.observe(el));
+
+  // ── 활성 nav ──
+  const navLinks = document.querySelectorAll('nav a[data-section]');
+
+  function updateNav() {
+    const home = document.getElementById('home');
+    const homeBottom = home ? home.getBoundingClientRect().bottom : 0;
+    if (homeBottom > window.innerHeight * 0.5) {
+      navLinks.forEach(a => a.classList.remove('active'));
+      return;
+    }
+    let current = '';
+    ['about', 'artists', 'works', 'news'].forEach(id => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      const { top, bottom } = el.getBoundingClientRect();
+      if (top <= window.innerHeight * 0.45 && bottom > 0) current = id;
+    });
+    const footer = document.getElementById('footer-contact');
+    if (footer && footer.getBoundingClientRect().top < window.innerHeight) current = 'contact';
+    navLinks.forEach(a => a.classList.toggle('active', a.dataset.section === current));
+  }
+
+  window.addEventListener('scroll', updateNav, { passive: true });
+  updateNav();
+
+  // ── 스무스 스크롤 ──
+  navLinks.forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      const target = a.dataset.section === 'contact'
+        ? document.getElementById('footer-contact')
+        : document.getElementById(a.dataset.section);
+      if (target) target.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+</script>
