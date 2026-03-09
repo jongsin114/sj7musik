@@ -119,32 +119,52 @@
     justify-content: center;
   }
   .logo-img-wrap {
-    width: clamp(260px, 36vw, 520px);
-    margin-bottom: 28px;
+  width: clamp(280px, 42vw, 620px);
+  margin-bottom: 28px;
+  opacity: 0;
+  animation: logoFadeUp 1s ease 0.3s forwards;
+}
+@keyframes logoFadeUp {
+  from {
     opacity: 0;
-    animation: fadeUp 1s ease 0.3s forwards;
+    transform: translate(40px, -30px);
   }
+  to {
+    opacity: 1;
+    transform: translate(40px, -150px);
+  }
+}
   .logo-img-wrap img {
     width: 100%;
     height: auto;
     display: block;
   }
-  .logo-tagline {
-    font-family: 'Space Mono', monospace;
-    font-size: clamp(9px, 0.9vw, 12px);
-    letter-spacing: 0.2em;
-    color: var(--gray);
-    text-transform: uppercase;
-    opacity: 0;
-    animation: fadeUp 1s ease 0.8s forwards;
-  }
+  .home-brand {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(28px, 3vw, 48px);
+  letter-spacing: 0.08em;
+  color: var(--white);
+  margin-top: 16px;
+  opacity: 0;
+  animation: fadeUp 1s ease 0.8s forwards;
+}
+.home-sub {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(9px, 0.8vw, 12px);
+  letter-spacing: 0.22em;
+  color: var(--gray);
+  text-transform: uppercase;
+  margin-top: 8px;
+  opacity: 0;
+  animation: fadeUp 1s ease 1s forwards;
+}
   .home-right {
     flex: 1;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-left: 4vw;
-  }
+    justify-content: flex-start;
+  align-items: center;
+  padding-left: 0;
+}
   .video-wrapper {
     width: 100%;
     max-width: 620px;
