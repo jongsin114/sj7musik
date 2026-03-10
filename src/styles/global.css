@@ -208,10 +208,10 @@
   }
   .about-headline {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(52px, 9vw, 138px);
+    font-size: clamp(52px, 9vw, 180px);
     line-height: 0.92;
     letter-spacing: 0.02em;
-    margin-bottom: 52px;
+    margin-bottom: 30px;
     overflow: hidden;
   }
   .about-headline span {
@@ -228,7 +228,7 @@
     max-width: 920px;
     height: 1px;
     background: rgba(255,255,255,0.14);
-    margin-bottom: 56px;
+    margin-bottom: 32px;
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 1s ease 0.45s;
