@@ -108,21 +108,21 @@
 
   /* ── HOME ── */
   #home {
-    justify-content: space-between;
-    padding: 0 8vw;
-    overflow: hidden;
-  }
+  justify-content: space-between;
+  padding: 0 8vw 0 8vw;
+  overflow: hidden;
+}
   .home-left {
-  flex: 1;
+  flex: 0 0 40%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 0;
   line-height: 1;
-  padding-left: 2vw;
+  padding-left: 0vw;
 }
   .logo-img-wrap {
-  width: clamp(280px, 42vw, 620px);
+  width: clamp(280px, 42vw, 500px);
   margin-bottom: 0px;
   opacity: 0;
   animation: logoFadeUp 1s ease 0.3s forwards;
@@ -130,11 +130,11 @@
 @keyframes logoFadeUp {
   from {
     opacity: 0;
-    transform: translate(40px, -30px);
+    transform: translate(-30px);
   }
   to {
     opacity: 1;
-    transform: translate(40px, -60px);
+    transform: translate(0px, -80px);
   }
 }
   .logo-img-wrap img {
@@ -144,38 +144,39 @@
   margin-bottom: -20px;  /* 로고 하단 여백 강제 제거 */
 }
 .home-brand {
-  font-family: 'DM Sans', sans-serif;
-  font-size: clamp(40px, 7vw, 90px);
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(40px, 7vw, 102px);
   font-weight: 800;
   letter-spacing: 0.08em;
   color: var(--white);
   margin-top: 0px;
   opacity: 0;
   animation: fadeUp 1s ease 0.8s forwards;
-    padding-left: 3vw;
+    padding-left: 0vw;
 }
 .home-sub {
-  font-family: 'DM Sans', sans-serif;
-  font-size: clamp(14px, 1.4vw, 20px);
-  font-weight: 700;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(14px, 1.3vw, 30px);
+  font-weight: 300;
   letter-spacing: 0.22em;
   color: var(--white);
   text-transform: uppercase;
-  margin-top: -82px;
+  margin-top: -100px;
   opacity: 0;
   animation: fadeUp 1s ease 1s forwards;
-    padding-left: 3vw;
+    padding-left: 0vw;
 }
   .home-right {
-    flex: 1;
-    display: flex;
-    justify-content: flex-start;
-  align-items: center;
-  padding-left: 0;
+  flex: 0 0 60%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  padding-left: -80vw;
+  padding-bottom: 6vh;
 }
   .video-wrapper {
     width: 100%;
-    max-width: 620px;
+    max-width: 900px;
     aspect-ratio: 16/9;
     background: #0a0a0a;
     overflow: hidden;
