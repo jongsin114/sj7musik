@@ -6,7 +6,7 @@ import '../styles/global.css';
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>SJ7 Music</title>
   <meta name="description" content="SJ7 MUSIC — Artist-led Music IP Company. 아티스트 중심의 뮤직 레이블로 음악, 공연, 콘텐츠를 통해 새로운 감동을 전합니다." />
   <link rel="icon" type="image/png" href="/favicon.ico" />
@@ -319,21 +319,22 @@ import '../styles/global.css';
     }
 
     // 마우스 드래그
-    worksTrack.addEventListener('mousedown', e => {
-      wIsDragging = true;
-      wDragStartX = e.clientX - wOffsetX;
-      worksTrack.style.transition = 'none';
-    });
-    window.addEventListener('mousemove', e => {
-      if (!wIsDragging) return;
-      wOffsetX = e.clientX - wDragStartX;
-      worksTrack.style.transform = `translateX(${wOffsetX}px)`;
-    });
-    window.addEventListener('mouseup', () => {
-      if (!wIsDragging) return;
-      wIsDragging = false;
-      snapToGrid();
-    });
+    let wTouchStartY = 0;
+worksTrack.addEventListener('touchstart', e => {
+  wTouchStartX = e.touches[0].clientX - wOffsetX;
+  wTouchStartY = e.touches[0].clientY;
+  worksTrack.style.transition = 'none';
+}, { passive: true });
+
+worksTrack.addEventListener('touchmove', e => {
+  const dx = Math.abs(e.touches[0].clientX - (wTouchStartX + wOffsetX));
+  const dy = Math.abs(e.touches[0].clientY - wTouchStartY);
+  if (dx > dy) {
+    e.preventDefault();
+    wOffsetX = e.touches[0].clientX - wTouchStartX;
+    worksTrack.style.transform = `translateX(${wOffsetX}px)`;
+  }
+}, { passive: false });
 
     // 터치 스와이프
     worksTrack.addEventListener('touchstart', e => {

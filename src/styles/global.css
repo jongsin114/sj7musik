@@ -444,4 +444,8 @@ footer {
   .works-tabs { padding: 40px 6vw 24px; }
   .works-track { padding: 0 6vw; gap: 12px; }
   .works-card { width: clamp(140px, 38vw, 200px); }
+  html {
+  scroll-behavior: smooth;
+  touch-action: pan-y;
+}
 }
