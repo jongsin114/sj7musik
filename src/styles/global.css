@@ -7,7 +7,10 @@
   --light-gray: #cccccc;
 }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  touch-action: pan-y;
+}
 
 body {
   background: #000;
@@ -171,79 +174,71 @@ section {
 .artist-photo:hover img { filter: grayscale(0%); transform: scale(1.05); }
 .artist-divider { flex: 1; height: 1px; background: rgba(255,255,255,0.1); align-self: center; }
 
-/* ── WORKS (스와이프 카드) ── */
+/* ── WORKS ── */
 #works {
   flex-direction: column; justify-content: center;
   padding: 80px 0; min-height: 80vh; overflow: hidden;
 }
 #works .section-label { left: 8vw; }
 
-.works-header {
-  padding: 0 8vw; margin-bottom: 40px;
-  display: flex; align-items: center; justify-content: space-between;
+.works-tabs {
+  display: flex; gap: 0;
+  padding: 48px 8vw 32px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  margin-bottom: 40px;
 }
-.works-nav { display: flex; gap: 12px; align-items: center; }
-.works-nav button {
-  background: none; border: 1px solid rgba(255,255,255,0.25);
-  color: white; width: 36px; height: 36px; border-radius: 50%;
-  cursor: pointer; font-size: 14px;
-  display: flex; align-items: center; justify-content: center;
-  transition: border-color 0.3s, background 0.3s;
+.works-tab {
+  background: none; border: none;
+  color: rgba(255,255,255,0.35);
+  font-family: 'Space Mono', monospace; font-size: 10px;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  cursor: pointer; padding: 8px 24px 8px 0;
+  transition: color 0.3s; position: relative;
 }
-.works-nav button:hover { border-color: white; background: rgba(255,255,255,0.08); }
+.works-tab::after {
+  content: ''; position: absolute; bottom: -1px; left: 0;
+  width: 0; height: 1px; background: white; transition: width 0.3s ease;
+}
+.works-tab.active { color: white; }
+.works-tab.active::after { width: calc(100% - 24px); }
+.works-tab:hover { color: rgba(255,255,255,0.7); }
 
 .works-track-wrap { overflow: hidden; width: 100%; }
 .works-track {
-  display: flex; gap: 24px; padding: 0 8vw;
+  display: flex; gap: 16px; padding: 0 8vw;
   transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: transform;
+  touch-action: pan-y;
 }
 
 .works-card {
-  flex-shrink: 0; width: clamp(260px, 30vw, 420px);
-  border: 1px solid rgba(255,255,255,0.08);
-  padding: 32px; display: flex; flex-direction: column; gap: 20px;
-  opacity: 0; transform: translateY(30px);
-  transition: opacity 0.8s ease, transform 0.8s ease, border-color 0.3s;
+  flex-shrink: 0; width: clamp(180px, 20vw, 280px);
+  display: flex; flex-direction: column; cursor: pointer;
+  opacity: 0; transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
 .works-card.visible { opacity: 1; transform: translateY(0); }
-.works-card:nth-child(2) { transition-delay: 0.1s; }
-.works-card:nth-child(3) { transition-delay: 0.2s; }
-.works-card:hover { border-color: rgba(255,255,255,0.25); }
 
-.works-card-label {
+.works-card-img {
+  width: 100%; aspect-ratio: 1/1;
+  background-color: #111; background-size: cover; background-position: center;
+  border-radius: 4px;
+  transition: transform 0.5s ease, filter 0.5s ease;
+  filter: brightness(0.85);
+}
+.works-card:hover .works-card-img { transform: scale(1.03); filter: brightness(1); }
+
+.works-card-body { padding: 12px 4px 4px; }
+.works-card-name {
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(12px, 1.1vw, 15px); font-weight: 700;
+  color: var(--white); letter-spacing: 0.02em; line-height: 1.3;
+}
+.works-card-role {
   font-family: 'Space Mono', monospace; font-size: 9px;
-  letter-spacing: 0.22em; color: rgba(255,255,255,0.35);
-  text-transform: uppercase; border-bottom: 1px solid rgba(255,255,255,0.1);
-  padding-bottom: 16px;
+  letter-spacing: 0.15em; color: rgba(255,255,255,0.35);
+  text-transform: uppercase; margin-top: 4px;
 }
-.works-card-title {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: clamp(22px, 2.5vw, 36px); letter-spacing: 0.06em; line-height: 1;
-}
-.works-card-subtitle {
-  font-family: 'Space Mono', monospace; font-size: 8.5px;
-  letter-spacing: 0.18em; color: rgba(255,255,255,0.35);
-  text-transform: uppercase; margin-bottom: -8px; margin-top: 4px;
-}
-.works-card-list { display: flex; flex-direction: column; gap: 2px; }
-.works-item {
-  font-size: clamp(11px, 1vw, 13.5px); line-height: 1.75;
-  color: var(--white); font-weight: 700; padding: 3px 0;
-  display: flex; align-items: baseline; gap: 10px;
-}
-.works-item::before {
-  content: '+'; color: rgba(255,255,255,0.28);
-  font-family: 'Space Mono', monospace; font-size: 10px; flex-shrink: 0;
-}
-
-.works-dots { display: flex; gap: 8px; padding: 24px 8vw 0; }
-.works-dot {
-  width: 4px; height: 4px; border-radius: 50%;
-  background: rgba(255,255,255,0.2);
-  transition: background 0.3s, transform 0.3s; cursor: pointer;
-}
-.works-dot.active { background: white; transform: scale(1.4); }
 
 /* ── NEWS ── */
 #news { justify-content: center; align-items: center; min-height: 60vh; }
@@ -299,10 +294,7 @@ footer {
   nav { padding: 16px 20px; gap: 12px; }
   nav a { font-size: 9px; letter-spacing: 0.1em; }
 
-  #home {
-    padding: 70px 6vw 40px;
-    gap: 20px; justify-content: center;
-  }
+  #home { padding: 70px 6vw 40px; gap: 20px; justify-content: center; }
   .logo-img-wrap { max-width: clamp(140px, 58vw, 260px); }
   .home-brand { font-size: calc(clamp(140px, 58vw, 260px) * 0.14); }
   .home-sub { font-size: calc(clamp(140px, 58vw, 260px) * 0.031); }
@@ -313,139 +305,12 @@ footer {
 
   #works { padding: 50px 0; min-height: auto; }
   #works .section-label { left: 6vw; }
-  .works-header { padding: 0 6vw; }
-  .works-track { padding: 0 6vw; gap: 16px; }
-  .works-dots { padding: 16px 6vw 0; }
-  .works-card { width: clamp(240px, 78vw, 320px); padding: 22px; }
+  .works-tabs { padding: 40px 6vw 24px; }
+  .works-track { padding: 0 6vw; gap: 12px; }
+  .works-card { width: clamp(140px, 38vw, 200px); }
 
   #news { min-height: 50vh; }
   .section-label { left: 24px; }
   footer { flex-direction: column; align-items: flex-start; }
   .footer-copy { text-align: left; }
-}
-/* ── WORKS (개별 카드 슬라이더) ── */
-#works {
-  flex-direction: column;
-  justify-content: center;
-  padding: 80px 0;
-  min-height: 80vh;
-  overflow: hidden;
-}
-#works .section-label { left: 8vw; }
-
-/* 카테고리 탭 */
-.works-tabs {
-  display: flex;
-  gap: 0;
-  padding: 48px 8vw 32px;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-  margin-bottom: 40px;
-}
-.works-tab {
-  background: none;
-  border: none;
-  color: rgba(255,255,255,0.35);
-  font-family: 'Space Mono', monospace;
-  font-size: 10px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  cursor: pointer;
-  padding: 8px 24px 8px 0;
-  transition: color 0.3s;
-  position: relative;
-}
-.works-tab::after {
-  content: '';
-  position: absolute;
-  bottom: -1px;
-  left: 0;
-  width: 0;
-  height: 1px;
-  background: white;
-  transition: width 0.3s ease;
-}
-.works-tab.active { color: white; }
-.works-tab.active::after { width: calc(100% - 24px); }
-.works-tab:hover { color: rgba(255,255,255,0.7); }
-
-/* 트랙 */
-.works-track-wrap { overflow: hidden; width: 100%; }
-.works-track {
-  display: flex;
-  gap: 16px;
-  padding: 0 8vw;
-  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: transform;
-}
-
-/* 카드 */
-.works-card {
-  flex-shrink: 0;
-  width: clamp(180px, 20vw, 280px);
-  display: flex;
-  flex-direction: column;
-  cursor: pointer;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-.works-card.visible { opacity: 1; transform: translateY(0); }
-.works-card:nth-child(2) { transition-delay: 0.05s; }
-.works-card:nth-child(3) { transition-delay: 0.1s; }
-.works-card:nth-child(4) { transition-delay: 0.15s; }
-
-/* 이미지 영역 */
-.works-card-img {
-  width: 100%;
-  aspect-ratio: 1/1;
-  background-color: #111;
-  background-size: cover;
-  background-position: center;
-  border-radius: 4px;
-  transition: transform 0.5s ease, filter 0.5s ease;
-  filter: brightness(0.85);
-}
-.works-card:hover .works-card-img {
-  transform: scale(1.03);
-  filter: brightness(1);
-}
-
-/* 이미지 없을 때 그라디언트 placeholder */
-.works-card-img:not([style*="url"]),
-.works-card-img[style*="url('')"] {
-  background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
-}
-
-/* 텍스트 영역 */
-.works-card-body {
-  padding: 12px 4px 4px;
-}
-.works-card-name {
-  font-family: 'DM Sans', sans-serif;
-  font-size: clamp(12px, 1.1vw, 15px);
-  font-weight: 700;
-  color: var(--white);
-  letter-spacing: 0.02em;
-  line-height: 1.3;
-}
-.works-card-role {
-  font-family: 'Space Mono', monospace;
-  font-size: 9px;
-  letter-spacing: 0.15em;
-  color: rgba(255,255,255,0.35);
-  text-transform: uppercase;
-  margin-top: 4px;
-}
-
-/* 모바일 */
-@media (max-width: 768px) {
-  #works { padding: 50px 0; min-height: auto; }
-  #works .section-label { left: 6vw; }
-  .works-tabs { padding: 40px 6vw 24px; }
-  .works-track { padding: 0 6vw; gap: 12px; }
-  .works-card { width: clamp(140px, 38vw, 200px); }
-  html {
-  scroll-behavior: smooth;
-  touch-action: pan-y;
-}
 }

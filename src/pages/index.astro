@@ -106,7 +106,6 @@ import '../styles/global.css';
     </div>
     <div class="works-track-wrap">
       <div class="works-track" id="worksTrack">
-
         <!-- K-POP -->
         <div class="works-card" data-cat="kpop"><div class="works-card-img" style="background-image:url('/got7.jpg')"></div><div class="works-card-body"><div class="works-card-name">GOT7</div><div class="works-card-role">Production</div></div></div>
         <div class="works-card" data-cat="kpop"><div class="works-card-img" style="background-image:url('/monsta-x.jpg')"></div><div class="works-card-body"><div class="works-card-name">MONSTA X</div><div class="works-card-role">Production</div></div></div>
@@ -127,7 +126,6 @@ import '../styles/global.css';
         <div class="works-card" data-cat="kpop"><div class="works-card-img" style="background-image:url('/wei.jpg')"></div><div class="works-card-body"><div class="works-card-name">WEi</div><div class="works-card-role">Production</div></div></div>
         <div class="works-card" data-cat="kpop"><div class="works-card-img" style="background-image:url('/jogwangil.jpg')"></div><div class="works-card-body"><div class="works-card-name">조광일</div><div class="works-card-role">Production</div></div></div>
         <div class="works-card" data-cat="kpop"><div class="works-card-img" style="background-image:url('/leejaewon.jpg')"></div><div class="works-card-body"><div class="works-card-name">Lee Jaewon (H.O.T)</div><div class="works-card-role">Production</div></div></div>
-
         <!-- SOLO -->
         <div class="works-card" data-cat="solo"><div class="works-card-img" style="background-image:url('/come-dive.jpg')"></div><div class="works-card-body"><div class="works-card-name">DIVE</div><div class="works-card-role">Feat. 조광일 — COME</div></div></div>
         <div class="works-card" data-cat="solo"><div class="works-card-img" style="background-image:url('/come-colors.jpg')"></div><div class="works-card-body"><div class="works-card-name">COLORS</div><div class="works-card-role">COME</div></div></div>
@@ -135,7 +133,6 @@ import '../styles/global.css';
         <div class="works-card" data-cat="solo"><div class="works-card-img" style="background-image:url('/come-call.jpg')"></div><div class="works-card-body"><div class="works-card-name">CALL YOUR NAME</div><div class="works-card-role">COME</div></div></div>
         <div class="works-card" data-cat="solo"><div class="works-card-img" style="background-image:url('/come-hate.jpg')"></div><div class="works-card-body"><div class="works-card-name">HATE ME?</div><div class="works-card-role">COME</div></div></div>
         <div class="works-card" data-cat="solo"><div class="works-card-img" style="background-image:url('/come-only.jpg')"></div><div class="works-card-body"><div class="works-card-name">ONLY YOU</div><div class="works-card-role">COME</div></div></div>
-
         <!-- CF -->
         <div class="works-card" data-cat="cf"><div class="works-card-img" style="background-image:url('/samsung-galaxy.jpg')"></div><div class="works-card-body"><div class="works-card-name">Samsung Galaxy</div><div class="works-card-role">CF</div></div></div>
         <div class="works-card" data-cat="cf"><div class="works-card-img" style="background-image:url('/samsung-zflip.jpg')"></div><div class="works-card-body"><div class="works-card-name">Samsung Z Flip</div><div class="works-card-role">CF</div></div></div>
@@ -157,7 +154,6 @@ import '../styles/global.css';
         <div class="works-card" data-cat="cf"><div class="works-card-img" style="background-image:url('/bravocone.jpg')"></div><div class="works-card-body"><div class="works-card-name">Bravo Cone</div><div class="works-card-role">CF</div></div></div>
         <div class="works-card" data-cat="cf"><div class="works-card-img" style="background-image:url('/oronamin.jpg')"></div><div class="works-card-body"><div class="works-card-name">Oronamin C</div><div class="works-card-role">CF</div></div></div>
         <div class="works-card" data-cat="cf"><div class="works-card-img" style="background-image:url('/seoul-metro.jpg')"></div><div class="works-card-body"><div class="works-card-name">Seoul Metropolitan Gov.</div><div class="works-card-role">CF</div></div></div>
-
       </div>
     </div>
   </section>
@@ -171,7 +167,7 @@ import '../styles/global.css';
     </div>
   </section>
 
-  <!-- FOOTER / CONTACT -->
+  <!-- FOOTER -->
   <footer id="footer-contact">
     <div class="footer-logo">SJ7 MUSIC</div>
     <div class="footer-copy">
@@ -184,7 +180,6 @@ import '../styles/global.css';
 </html>
 
 <script>
-  // ── 홈에서 시작 ──
   window.history.scrollRestoration = 'manual';
   window.scrollTo(0, 0);
 
@@ -192,55 +187,36 @@ import '../styles/global.css';
   const cursor = document.getElementById('cursor');
   const ring = document.getElementById('cursorRing');
   let mx = 0, my = 0, rx = 0, ry = 0;
-
   document.addEventListener('mousemove', (e) => {
-    mx = e.clientX;
-    my = e.clientY;
-    cursor.style.left = mx + 'px';
-    cursor.style.top = my + 'px';
+    mx = e.clientX; my = e.clientY;
+    cursor.style.left = mx + 'px'; cursor.style.top = my + 'px';
   });
-
   (function animRing() {
-    rx += (mx - rx) * 0.12;
-    ry += (my - ry) * 0.12;
-    ring.style.left = rx + 'px';
-    ring.style.top = ry + 'px';
+    rx += (mx - rx) * 0.12; ry += (my - ry) * 0.12;
+    ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
     requestAnimationFrame(animRing);
   })();
-
   document.querySelectorAll('a, button').forEach(el => {
     el.addEventListener('mouseenter', () => ring.style.transform = 'translate(-50%,-50%) scale(1.8)');
     el.addEventListener('mouseleave', () => ring.style.transform = 'translate(-50%,-50%) scale(1)');
   });
 
   // ── 스크롤 reveal ──
-  const revealEls = document.querySelectorAll(
-    '.about-headline, .about-divider, .about-text, .artist-row, .coming-soon-wrap'
-  );
   const io = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: 0.12 });
-  revealEls.forEach(el => io.observe(el));
-
-  // ── Works 카드 reveal ──
-  const worksIo = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: 0.05 });
+  document.querySelectorAll('.about-headline, .about-divider, .about-text, .artist-row, .coming-soon-wrap')
+    .forEach(el => io.observe(el));
 
   // ── 활성 nav ──
   const navLinks = document.querySelectorAll('nav a[data-section]');
-
   function updateNav() {
     const home = document.getElementById('home');
     const homeBottom = home ? home.getBoundingClientRect().bottom : 0;
-    if (homeBottom > window.innerHeight * 0.5) {
-      navLinks.forEach(a => a.classList.remove('active'));
-      return;
-    }
+    if (homeBottom > window.innerHeight * 0.5) { navLinks.forEach(a => a.classList.remove('active')); return; }
     let current = '';
     ['about', 'artists', 'works', 'news'].forEach(id => {
-      const el = document.getElementById(id);
-      if (!el) return;
+      const el = document.getElementById(id); if (!el) return;
       const { top, bottom } = el.getBoundingClientRect();
       if (top <= window.innerHeight * 0.45 && bottom > 0) current = id;
     });
@@ -248,11 +224,9 @@ import '../styles/global.css';
     if (footer && footer.getBoundingClientRect().top < window.innerHeight) current = 'contact';
     navLinks.forEach(a => a.classList.toggle('active', a.dataset.section === current));
   }
-
   window.addEventListener('scroll', updateNav, { passive: true });
   updateNav();
 
-  // ── 스무스 스크롤 ──
   navLinks.forEach(a => {
     a.addEventListener('click', e => {
       e.preventDefault();
@@ -263,27 +237,27 @@ import '../styles/global.css';
     });
   });
 
-  // ── Works 카드 슬라이더 ──
+  // ── Works 슬라이더 ──
   {
     const worksTrack = document.getElementById('worksTrack');
     const allCards = document.querySelectorAll('.works-card');
     const tabs = document.querySelectorAll('.works-tab');
     let currentCat = 'kpop';
     let wOffsetX = 0;
-    let wTouchStartX = 0;
     let wIsDragging = false;
     let wDragStartX = 0;
+    let wTouchStartX = 0;
+    let wTouchStartY = 0;
+    let wIsHorizontal = null;
 
     function showCategory(cat) {
       currentCat = cat;
       wOffsetX = 0;
       worksTrack.style.transition = 'none';
       worksTrack.style.transform = 'translateX(0)';
-
       allCards.forEach(card => {
         card.style.display = card.dataset.cat === cat ? 'flex' : 'none';
       });
-
       setTimeout(() => {
         document.querySelectorAll(`.works-card[data-cat="${cat}"]`).forEach((card, i) => {
           card.style.opacity = '0';
@@ -319,34 +293,47 @@ import '../styles/global.css';
     }
 
     // 마우스 드래그
-    let wTouchStartY = 0;
-worksTrack.addEventListener('touchstart', e => {
-  wTouchStartX = e.touches[0].clientX - wOffsetX;
-  wTouchStartY = e.touches[0].clientY;
-  worksTrack.style.transition = 'none';
-}, { passive: true });
+    worksTrack.addEventListener('mousedown', e => {
+      wIsDragging = true;
+      wDragStartX = e.clientX - wOffsetX;
+      worksTrack.style.transition = 'none';
+    });
+    window.addEventListener('mousemove', e => {
+      if (!wIsDragging) return;
+      wOffsetX = e.clientX - wDragStartX;
+      worksTrack.style.transform = `translateX(${wOffsetX}px)`;
+    });
+    window.addEventListener('mouseup', () => {
+      if (!wIsDragging) return;
+      wIsDragging = false;
+      snapToGrid();
+    });
 
-worksTrack.addEventListener('touchmove', e => {
-  const dx = Math.abs(e.touches[0].clientX - (wTouchStartX + wOffsetX));
-  const dy = Math.abs(e.touches[0].clientY - wTouchStartY);
-  if (dx > dy) {
-    e.preventDefault();
-    wOffsetX = e.touches[0].clientX - wTouchStartX;
-    worksTrack.style.transform = `translateX(${wOffsetX}px)`;
-  }
-}, { passive: false });
-
-    // 터치 스와이프
+    // 터치 — 방향 판별 후 가로면 페이지 스크롤 차단
     worksTrack.addEventListener('touchstart', e => {
-      wTouchStartX = e.touches[0].clientX - wOffsetX;
+      wTouchStartX = e.touches[0].clientX;
+      wTouchStartY = e.touches[0].clientY;
+      wIsHorizontal = null;
+      wDragStartX = e.touches[0].clientX - wOffsetX;
       worksTrack.style.transition = 'none';
     }, { passive: true });
+
     worksTrack.addEventListener('touchmove', e => {
-      wOffsetX = e.touches[0].clientX - wTouchStartX;
-      worksTrack.style.transform = `translateX(${wOffsetX}px)`;
-    }, { passive: true });
+      const dx = e.touches[0].clientX - wTouchStartX;
+      const dy = e.touches[0].clientY - wTouchStartY;
+      if (wIsHorizontal === null) {
+        wIsHorizontal = Math.abs(dx) > Math.abs(dy);
+      }
+      if (wIsHorizontal) {
+        e.preventDefault();
+        wOffsetX = e.touches[0].clientX - wDragStartX;
+        worksTrack.style.transform = `translateX(${wOffsetX}px)`;
+      }
+    }, { passive: false });
+
     worksTrack.addEventListener('touchend', () => {
-      snapToGrid();
+      if (wIsHorizontal) snapToGrid();
+      wIsHorizontal = null;
     });
 
     showCategory('kpop');
